@@ -10,5 +10,34 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND.
  */
 
-export type Name = "Viktor" | "Confused Developer";
-export type Greeting = `Hello, ${Name}!`;
+/**
+ * Sleep for `ms` milliseconds.
+ *
+ * @export
+ * @param ms Number of milliseconds to sleep
+ * @returns
+ */
+export function sleep(ms: number): Promise<void> {
+  if (typeof ms !== "number") throw new Error(`${typeof ms} is not a number`);
+  if (isNaN(ms)) throw new Error(`NaN is not a valid argument`);
+  return new Promise<void>((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Blocks the main thread of the program
+ * until `ms` milliseconds have passed.
+ *
+ * @export
+ * @param ms Number of milliseconds to sleep
+ * @returns
+ */
+export function paralyze(ms: number): void {
+  if (typeof ms !== "number") throw new Error(`${typeof ms} is not a number`);
+  if (isNaN(ms)) throw new Error(`NaN is not a valid argument`);
+
+  const stopAt = Date.now() + ms;
+  while (Date.now() < stopAt) {}
+  return;
+}
+
+export default sleep;

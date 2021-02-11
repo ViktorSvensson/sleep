@@ -8,14 +8,15 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
+    "sourceMap": false,
+    "outDir": "lib",
     "rootDir": "src",
+    "declaration": true,
     "typeRoots": ["node_modules/@types", "index.d.ts"],
     "strict": true,
     "strictNullChecks": false,
     "strictFunctionTypes": true,
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ES2020", "DOM"]
   },
   "include": ["src/**/*"]
 }

@@ -1,5 +1,8 @@
 {
-  "main": "src/index.ts",
+  "name": "@floss/sleep",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "prettier": {
     "singleQuote": false,
     "bracketSpacing": false,
